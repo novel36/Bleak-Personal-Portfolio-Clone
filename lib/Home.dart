@@ -1,6 +1,9 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:flutterresponsivenavigation/Sections/aboutMe.dart';
+import 'package:flutterresponsivenavigation/Sections/profileIntro.dart';
+import 'package:flutterresponsivenavigation/Sections/resume.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -10,6 +13,11 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  final Shader linearGradient = LinearGradient(
+          colors: <Color>[Color(0xffd61a5e), Color(0xffff8c05)],
+          begin: Alignment.centerRight,
+          end: Alignment.bottomLeft)
+      .createShader(Rect.fromLTWH(0.0, 0.0, 200.0, 230.0));
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -111,138 +119,15 @@ class _HomeState extends State<Home> {
               const SizedBox(
                 height: 64,
               ),
-              Container(
-                height: 400,
-                color: Color(0xff262626),
-                padding: EdgeInsets.all(32),
-                child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Container(
-                            alignment: Alignment.centerLeft,
-                            child: Text(
-                              "I AM BLEAK PEAKER",
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.w400,
-                                  letterSpacing: 5,
-                                  fontSize: 25),
-                            ),
-                          ),
-                          SizedBox(
-                            height: 25,
-                          ),
-                          Container(
-                            alignment: Alignment.centerLeft,
-                            child: Text(
-                              "Graphic Designer",
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 50,
-                                  fontWeight: FontWeight.bold),
-                            ),
-                          ),
-                          SizedBox(
-                            height: 25,
-                          ),
-                          ElevatedButton(
-                              style: ElevatedButton.styleFrom(
-                                  padding: EdgeInsets.all(16)),
-                              onPressed: () {},
-                              child: Text(
-                                "Contact Me",
-                                style: TextStyle(fontSize: 16),
-                              ))
-                        ],
-                      ),
-                      Transform.rotate(
-                        alignment: Alignment.center,
-                        angle: pi / 4,
-                        origin: Offset(0, 0),
-                        child: Container(
-                          margin: EdgeInsets.only(right: 64, top: 40),
-                          decoration: BoxDecoration(
-                              // color: Colors.grey,
-
-                              image: DecorationImage(
-                                  image: AssetImage("assets/intro-image.jpg"))),
-                          width: 200,
-                          height: 200,
-                        ),
-                      )
-                    ]),
-              ),
+              Profile(linearGradient: linearGradient),
               SizedBox(
                 height: 64,
               ),
-              Container(
-                height: 400,
-                padding: EdgeInsets.all(32),
-                decoration: BoxDecoration(
-                  color: Color(0xff262626),
-                ),
-                child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Expanded(
-                        flex: 1,
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Container(
-                              alignment: Alignment.centerLeft,
-                              child: Text(
-                                "About Me",
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.w400,
-                                    letterSpacing: 5,
-                                    fontSize: 25),
-                              ),
-                            ),
-                            SizedBox(
-                              height: 25,
-                            ),
-                            Container(
-                              alignment: Alignment.centerLeft,
-                              child: Text(
-                                "I am a Graphic Designer",
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 50,
-                                    fontWeight: FontWeight.bold),
-                              ),
-                            ),
-                            SizedBox(
-                              height: 25,
-                            ),
-                            Text(
-                              "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut doloremque ratione perferendis possimus voluptatibus distinctio autem expedita qui unde modi impedit officia illum praesentium amet, vero quos natus veritatis totam!",
-                              style: TextStyle(
-                                  fontSize: 16, overflow: TextOverflow.fade),
-                            )
-                          ],
-                        ),
-                      ),
-                      Transform.rotate(
-                        angle: pi / 4,
-                        origin: Offset(0, 0),
-                        child: Container(
-                          margin: EdgeInsets.only(right: 32, left: 32),
-                          color: Colors.grey,
-                          width: 150,
-                          height: 150,
-                        ),
-                      )
-                    ]),
-              )
+              AboutMe(),
+              SizedBox(
+                height: 64,
+              ),
+              MyResume()
             ],
           ),
         ),
