@@ -156,13 +156,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.4.9"
-  timelines:
+  timeline_tile:
     dependency: "direct main"
     description:
-      name: timelines
+      name: timeline_tile
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.1.0"
+    version: "2.0.0"
   vector_math:
     dependency: transitive
     description:
@@ -172,4 +172,3 @@ packages:
     version: "2.1.2"
 sdks:
   dart: ">=2.17.6 <3.0.0"
-  flutter: ">=1.17.0"

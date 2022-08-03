@@ -1,0 +1,157 @@
+Timeline(
+                    
+                    padding: EdgeInsets.only(right: 64),
+                    scrollDirection: Axis.vertical,
+                    children: [
+                      TimelineTile(
+
+                        direction: Axis.vertical,
+                        mainAxisExtent: 100,
+                        contents: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Container(
+                            padding: EdgeInsets.all(8.0),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  'Pentagon Design',
+                                  style: TextStyle(
+                                      fontSize: 20,
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                                SizedBox(height: 12),
+                                Text('Pentagon Design',
+                                    style: TextStyle(
+                                        fontSize: 10,
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.bold)),
+                              ],
+                            ),
+                          ),
+                        ),
+                        node: TimelineNode(
+                          indicator: DotIndicator(
+                            color: Colors.white,
+                            size: 20,
+                          ),
+                          endConnector: SolidLineConnector(
+                            thickness: 3,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                      TimelineTile(
+                        direction: Axis.vertical,
+                        mainAxisExtent: 80,
+                        contents: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Container(
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  'Pentagon Design',
+                                  style: TextStyle(
+                                      fontSize: 20,
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                                SizedBox(height: 12),
+                                Text('Pentagon Design',
+                                    style: TextStyle(
+                                        fontSize: 10,
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.bold)),
+                              ],
+                            ),
+                          ),
+                        ),
+                        node: TimelineNode(
+                          indicator: DotIndicator(
+                            size: 20,
+                            color: Colors.white,
+                          ),
+                          startConnector: SolidLineConnector(
+                            color: Colors.white,
+                            thickness: 3,
+                          ),
+                          endConnector: SolidLineConnector(
+                            thickness: 3,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                      TimelineTile(
+                        direction: Axis.vertical,
+                        mainAxisExtent: 80,
+                        contents: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Container(
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  'Pentagon Design',
+                                  style: TextStyle(
+                                      fontSize: 20,
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                                SizedBox(height: 12),
+                                Text('Pentagon Design',
+                                    style: TextStyle(
+                                        fontSize: 10,
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.bold)),
+                              ],
+                            ),
+                          ),
+                        ),
+                        node: TimelineNode(
+                          indicator: DotIndicator(
+                            size: 20,
+                            color: Colors.white,
+                          ),
+                          startConnector: SolidLineConnector(
+                            thickness: 3,
+                            color: Colors.white,
+                          ),
+                          endConnector: SolidLineConnector(
+                            thickness: 3,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                      TimelineTile(
+                        direction: Axis.vertical,
+                        mainAxisExtent: 80,
+                        contents: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Card(
+                            child: Container(
+                              padding: EdgeInsets.all(8.0),
+                              child: Text('City Printing'),
+                            ),
+                          ),
+                        ),
+                        node: TimelineNode(
+                          indicator: DotIndicator(
+                            color: Colors.white,
+                          ),
+                          startConnector: SolidLineConnector(
+                            color: Colors.white,
+                            thickness: 3,
+                          ),
+                          endConnector: SolidLineConnector(
+                            color: Colors.white,
+                            thickness: 3,
+                          ),
+                        ),
+                      )
+                    ],
+                  )
