@@ -28,6 +28,7 @@ class _HomeState extends State<Home> {
             padding: const EdgeInsets.only(
                 left: 112, right: 112, top: 40, bottom: 64),
             child: StickyHeader(
+              overlapHeaders: true,
               header: Container(
                 padding: const EdgeInsets.all(16),
                 decoration: BoxDecoration(

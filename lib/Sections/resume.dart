@@ -1,11 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutterresponsivenavigation/Sections/ResumePages/experiance.dart';
+import 'package:flutterresponsivenavigation/Sections/ResumePages/skills.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:timeline_tile/timeline_tile.dart';
 
 class MyResume extends StatelessWidget {
-  const MyResume({Key? key}) : super(key: key);
-
+  MyResume({Key? key}) : super(key: key);
+  static const _images = [
+    'https://picsum.photos/200/300',
+    'https://picsum.photos/200/301',
+    'https://picsum.photos/200/302',
+    'https://picsum.photos/200/303',
+  ];
+  final PageController controller = PageController();
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -18,7 +27,7 @@ class MyResume extends StatelessWidget {
         children: [
           Container(
             height: 60,
-            alignment: Alignment.center,
+            alignment: Alignment.bottomCenter,
             // color: Colors.red,
             child: Text(
               "My Resume",
@@ -28,95 +37,43 @@ class MyResume extends StatelessWidget {
                   fontSize: 30),
             ),
           ),
-          Container(
-            height: 380,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              crossAxisAlignment: CrossAxisAlignment.center,
+          Expanded(
+            child: PageView(
+              reverse: false,
+              pageSnapping: true,
+              controller: controller,
+              physics: BouncingScrollPhysics(),
               children: [
-                Expanded(
-                    child: Container(
-                  padding: EdgeInsets.all(32),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text("Experience",
-                          style: TextStyle(
-                              color: Color.fromARGB(255, 255, 118, 5),
-                              fontWeight: FontWeight.w900,
-                              letterSpacing: 5,
-                              fontSize: 24)),
-                      SizedBox(
-                        height: 32,
-                      ),
-                      Text("More than 6 years experience as a ",
-                          style: TextStyle(
-                              fontWeight: FontWeight.w900,
-                              // letterSpacing: 5,
-                              color: Colors.white,
-                              fontSize: 40)),
-                      SizedBox(
-                        height: 8,
-                      ),
-                      Text("Designer",
-                          style: TextStyle(
-                              fontWeight: FontWeight.w900,
-                              letterSpacing: 5,
-                              color: Color.fromARGB(255, 255, 118, 5),
-                              fontSize: 48))
-                    ],
-                  ),
-                )),
-                Expanded(
-                  child: SingleChildScrollView(
-                    padding: EdgeInsets.all(32),
-                    child: Column(
-                      children: [
-                        TimelineTile(
-                          isFirst: true,
-                          indicatorStyle: IndicatorStyle(color: Colors.white),
-                          afterLineStyle: LineStyle(
-                            color: Colors.white,
-                          ),
-                        ),
-                        TimelineTile(
-                          indicatorStyle: IndicatorStyle(color: Colors.white),
-                          afterLineStyle: LineStyle(
-                            color: Colors.white,
-                          ),
-                          beforeLineStyle: LineStyle(
-                            color: Colors.white,
-                          ),
-                        ),
-                        TimelineTile(
-                          indicatorStyle: IndicatorStyle(color: Colors.white),
-                          afterLineStyle: LineStyle(
-                            color: Colors.white,
-                          ),
-                          beforeLineStyle: LineStyle(
-                            color: Colors.white,
-                          ),
-                        ),
-                        TimelineTile(
-                          indicatorStyle: IndicatorStyle(color: Colors.white),
-                          afterLineStyle: LineStyle(
-                            color: Colors.white,
-                          ),
-                          beforeLineStyle: LineStyle(
-                            color: Colors.white,
-                          ),
-                        ),
-                      ],
-                    ),
+                experiancePage(),
+                skillsPage(),
+                Container(
+                  alignment: Alignment.center,
+                  color: Colors.pink,
+                  child: Text(
+                    "Page 3",
+                    style: TextStyle(color: Colors.white),
                   ),
                 ),
               ],
             ),
           ),
           Container(
+            alignment: Alignment.center,
             height: 60,
-            color: Colors.blue,
+            // color: Colors.blue,
+            child: SmoothPageIndicator(
+              controller: controller,
+              count: 3,
+              effect: WormEffect(
+                  dotHeight: 10,
+                  dotWidth: 10,
+                  dotColor: Color.fromARGB(148, 255, 138, 5),
+                  activeDotColor: Color(0xffFF8C05)),
+              onDotClicked: (index) {
+                controller.animateToPage(index,
+                    duration: Duration(seconds: 2), curve: Curves.bounceOut);
+              },
+            ),
           ),
         ],
       ),
