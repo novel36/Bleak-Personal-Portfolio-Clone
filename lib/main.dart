@@ -25,6 +25,7 @@ class MyApp extends StatelessWidget {
       title: "PortfolioApp",
       debugShowCheckedModeBanner: false,
       home: Home(),
+      theme: ThemeData(cardColor: Color(0xFF212121)),
     );
   }
 }

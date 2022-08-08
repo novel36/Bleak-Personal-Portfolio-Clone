@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutterresponsivenavigation/Sections/aboutMe.dart';
+import 'package:flutterresponsivenavigation/Sections/myPortfolio.dart';
 import 'package:flutterresponsivenavigation/Sections/profileIntro.dart';
 import 'package:flutterresponsivenavigation/Sections/resume.dart';
 import 'package:sticky_headers/sticky_headers/widget.dart';
@@ -14,6 +15,7 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  final ScrollController _scrollController = ScrollController();
   final Shader linearGradient = LinearGradient(
           colors: <Color>[Color(0xffd61a5e), Color(0xffff8c05)],
           begin: Alignment.centerRight,
@@ -28,7 +30,8 @@ class _HomeState extends State<Home> {
             padding: const EdgeInsets.only(
                 left: 112, right: 112, top: 40, bottom: 64),
             child: StickyHeader(
-              overlapHeaders: true,
+              // overlapHeaders: true,
+
               header: Container(
                 padding: const EdgeInsets.all(16),
                 decoration: BoxDecoration(
@@ -130,7 +133,11 @@ class _HomeState extends State<Home> {
                   SizedBox(
                     height: 64,
                   ),
-                  MyResume()
+                  MyResume(),
+                  SizedBox(
+                    height: 64,
+                  ),
+                  MyPortfolio()
                 ],
               ),
             ),

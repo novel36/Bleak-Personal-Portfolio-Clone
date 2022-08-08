@@ -46,14 +46,6 @@ class MyResume extends StatelessWidget {
               children: [
                 experiancePage(),
                 skillsPage(),
-                Container(
-                  alignment: Alignment.center,
-                  color: Colors.pink,
-                  child: Text(
-                    "Page 3",
-                    style: TextStyle(color: Colors.white),
-                  ),
-                ),
               ],
             ),
           ),
@@ -63,7 +55,7 @@ class MyResume extends StatelessWidget {
             // color: Colors.blue,
             child: SmoothPageIndicator(
               controller: controller,
-              count: 3,
+              count: 2,
               effect: WormEffect(
                   dotHeight: 10,
                   dotWidth: 10,
