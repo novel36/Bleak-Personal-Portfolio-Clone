@@ -1,3 +1,4 @@
+import 'package:buttons_tabbar/buttons_tabbar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -26,7 +27,7 @@ class _MyPortfolioState extends State<MyPortfolio>
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 500,
+      height: 700,
       color: Color(0xff262626),
       // padding: EdgeInsets.all(32),
       child: Column(
@@ -34,7 +35,7 @@ class _MyPortfolioState extends State<MyPortfolio>
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Container(
-            height: 60,
+            height: 80,
             alignment: Alignment.bottomCenter,
             // color: Colors.red,
             child: Text(
@@ -49,7 +50,92 @@ class _MyPortfolioState extends State<MyPortfolio>
           SizedBox(),
           Expanded(
             flex: 2,
-            child: SizedBox(),
+            child: SizedBox(
+              child: Column(
+                children: [
+                  ButtonsTabBar(
+                    unselectedBackgroundColor: Colors.transparent,
+                    controller: tabController,
+                    backgroundColor: Colors.transparent,
+
+                    // backgroundColor: Colors.red,
+                    // unselectedBackgroundColor: Colors.grey[300],
+                    unselectedLabelStyle: TextStyle(color: Colors.white),
+                    contentPadding: EdgeInsets.symmetric(horizontal: 16.0),
+                    labelStyle: TextStyle(
+                      color: Color(0xffFF8C05),
+                      fontWeight: FontWeight.bold,
+                    ),
+                    tabs: [
+                      Tab(
+                        text: "Set All",
+                      ),
+                      Tab(
+                        text: "Mobile Apps",
+                      ),
+                      Tab(
+                        text: "Websites",
+                      ),
+                      Tab(
+                        text: "Designs",
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 32,
+                  ),
+                  Expanded(
+                    child: TabBarView(
+                      controller: tabController,
+                      children: <Widget>[
+                        GridView.count(
+                          crossAxisCount: 3,
+                          childAspectRatio: 0.9,
+                          crossAxisSpacing: 64,
+                          mainAxisSpacing: 32,
+                          children: [
+                            Container(
+                              //
+                              height: 200,
+                              color: Colors.red,
+                            ),
+                            Container(
+                              height: 200,
+                              color: Colors.yellow,
+                            ),
+                            Container(
+                              height: 200,
+                              color: Colors.pink,
+                            ),
+                            Container(
+                              height: 200,
+                              color: Colors.green,
+                            ),
+                            Container(
+                              height: 200,
+                              color: Colors.purple,
+                            ),
+                            Container(
+                              height: 200,
+                              color: Colors.amber,
+                            )
+                          ],
+                        ),
+                        Center(
+                          child: Icon(Icons.directions_transit),
+                        ),
+                        Center(
+                          child: Icon(Icons.directions_bike),
+                        ),
+                        Center(
+                          child: Icon(Icons.directions_car),
+                        ),
+                      ],
+                    ),
+                  )
+                ],
+              ),
+            ),
           ),
         ],
       ),
