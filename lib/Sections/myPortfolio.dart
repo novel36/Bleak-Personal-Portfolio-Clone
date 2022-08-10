@@ -2,6 +2,10 @@ import 'package:buttons_tabbar/buttons_tabbar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutterresponsivenavigation/Sections/MyPortfolioTabs/designs.dart';
+import 'package:flutterresponsivenavigation/Sections/MyPortfolioTabs/mobile_apps.dart';
+import 'package:flutterresponsivenavigation/Sections/MyPortfolioTabs/see_all.dart';
+import 'package:flutterresponsivenavigation/Sections/MyPortfolioTabs/websites.dart';
 import 'package:flutterresponsivenavigation/Sections/ResumePages/experiance.dart';
 import 'package:flutterresponsivenavigation/Sections/ResumePages/skills.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
@@ -85,52 +89,18 @@ class _MyPortfolioState extends State<MyPortfolio>
                     height: 32,
                   ),
                   Expanded(
-                    child: TabBarView(
-                      controller: tabController,
-                      children: <Widget>[
-                        GridView.count(
-                          crossAxisCount: 3,
-                          childAspectRatio: 0.9,
-                          crossAxisSpacing: 64,
-                          mainAxisSpacing: 32,
-                          children: [
-                            Container(
-                              //
-                              height: 200,
-                              color: Colors.red,
-                            ),
-                            Container(
-                              height: 200,
-                              color: Colors.yellow,
-                            ),
-                            Container(
-                              height: 200,
-                              color: Colors.pink,
-                            ),
-                            Container(
-                              height: 200,
-                              color: Colors.green,
-                            ),
-                            Container(
-                              height: 200,
-                              color: Colors.purple,
-                            ),
-                            Container(
-                              height: 200,
-                              color: Colors.amber,
-                            )
-                          ],
-                        ),
-                        Center(
-                          child: Icon(Icons.directions_transit),
-                        ),
-                        Center(
-                          child: Icon(Icons.directions_bike),
-                        ),
-                        Center(
-                          child: Icon(Icons.directions_car),
-                        ),
-                      ],
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 16.0, vertical: 32),
+                      child: TabBarView(
+                        controller: tabController,
+                        children: <Widget>[
+                          seeAll(),
+                          mobileApps(),
+                          website(),
+                          designs()
+                        ],
+                      ),
                     ),
                   )
                 ],

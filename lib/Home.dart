@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutterresponsivenavigation/Sections/aboutMe.dart';
+import 'package:flutterresponsivenavigation/Sections/contactMe.dart';
 import 'package:flutterresponsivenavigation/Sections/myPortfolio.dart';
 import 'package:flutterresponsivenavigation/Sections/profileIntro.dart';
 import 'package:flutterresponsivenavigation/Sections/resume.dart';
@@ -137,7 +138,11 @@ class _HomeState extends State<Home> {
                   SizedBox(
                     height: 64,
                   ),
-                  MyPortfolio()
+                  MyPortfolio(),
+                  SizedBox(
+                    height: 64,
+                  ),
+                  ContactMe()
                 ],
               ),
             ),

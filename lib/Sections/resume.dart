@@ -8,12 +8,7 @@ import 'package:timeline_tile/timeline_tile.dart';
 
 class MyResume extends StatelessWidget {
   MyResume({Key? key}) : super(key: key);
-  static const _images = [
-    'https://picsum.photos/200/300',
-    'https://picsum.photos/200/301',
-    'https://picsum.photos/200/302',
-    'https://picsum.photos/200/303',
-  ];
+
   final PageController controller = PageController();
   @override
   Widget build(BuildContext context) {
