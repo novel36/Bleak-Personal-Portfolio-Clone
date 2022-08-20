@@ -91,39 +91,47 @@ class ContactMe extends StatelessWidget {
               child: Padding(
                 padding: const EdgeInsets.all(24.0),
                 child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Row(
                       children: [
                         Expanded(
                           child: TextField(
+                              style: TextStyle(color: Colors.white),
                               decoration: InputDecoration(
-                            hintText: "First name",
-                            hintStyle: TextStyle(color: Colors.grey.shade700),
-                            enabledBorder: UnderlineInputBorder(
-                              borderSide:
-                                  BorderSide(color: Colors.white, width: 0.3),
-                            ),
-                            focusedBorder: UnderlineInputBorder(
-                              borderSide: BorderSide(color: Colors.cyan),
-                            ),
-                          )),
+                                hintText: "First name",
+                                hintStyle:
+                                    TextStyle(color: Colors.grey.shade700),
+                                enabledBorder: UnderlineInputBorder(
+                                  borderSide: BorderSide(
+                                      color: Colors.white, width: 0.3),
+                                ),
+                                focusedBorder: UnderlineInputBorder(
+                                  borderSide: BorderSide(
+                                      color: Color.fromARGB(255, 255, 118, 5)),
+                                ),
+                              )),
                         ),
                         SizedBox(
                           width: 30,
                         ),
                         Expanded(
                           child: TextField(
+                              style: TextStyle(color: Colors.white),
                               decoration: InputDecoration(
-                            hintText: "Last name",
-                            hintStyle: TextStyle(color: Colors.grey.shade700),
-                            enabledBorder: UnderlineInputBorder(
-                              borderSide:
-                                  BorderSide(color: Colors.white, width: 0.3),
-                            ),
-                            focusedBorder: UnderlineInputBorder(
-                              borderSide: BorderSide(color: Colors.cyan),
-                            ),
-                          )),
+                                hintText: "Last name",
+                                hintStyle:
+                                    TextStyle(color: Colors.grey.shade700),
+                                enabledBorder: UnderlineInputBorder(
+                                  borderSide: BorderSide(
+                                      color: Colors.white, width: 0.3),
+                                ),
+                                focusedBorder: UnderlineInputBorder(
+                                  borderSide: BorderSide(
+                                      color: Color.fromARGB(255, 255, 118, 5)),
+                                ),
+                              )),
                         ),
                       ],
                     ),
@@ -134,34 +142,40 @@ class ContactMe extends StatelessWidget {
                       children: [
                         Expanded(
                           child: TextField(
+                              style: TextStyle(color: Colors.white),
                               decoration: InputDecoration(
-                            hintText: "First name",
-                            hintStyle: TextStyle(color: Colors.grey.shade700),
-                            enabledBorder: UnderlineInputBorder(
-                              borderSide:
-                                  BorderSide(color: Colors.white, width: 0.3),
-                            ),
-                            focusedBorder: UnderlineInputBorder(
-                              borderSide: BorderSide(color: Colors.cyan),
-                            ),
-                          )),
+                                hintText: "First name",
+                                hintStyle:
+                                    TextStyle(color: Colors.grey.shade700),
+                                enabledBorder: UnderlineInputBorder(
+                                  borderSide: BorderSide(
+                                      color: Colors.white, width: 0.3),
+                                ),
+                                focusedBorder: UnderlineInputBorder(
+                                  borderSide: BorderSide(
+                                      color: Color.fromARGB(255, 255, 118, 5)),
+                                ),
+                              )),
                         ),
                         SizedBox(
                           width: 30,
                         ),
                         Expanded(
                           child: TextField(
+                              style: TextStyle(color: Colors.white),
                               decoration: InputDecoration(
-                            hintText: "Last name",
-                            hintStyle: TextStyle(color: Colors.grey.shade700),
-                            enabledBorder: UnderlineInputBorder(
-                              borderSide:
-                                  BorderSide(color: Colors.white, width: 0.3),
-                            ),
-                            focusedBorder: UnderlineInputBorder(
-                              borderSide: BorderSide(color: Colors.cyan),
-                            ),
-                          )),
+                                hintText: "Last name",
+                                hintStyle:
+                                    TextStyle(color: Colors.grey.shade700),
+                                enabledBorder: UnderlineInputBorder(
+                                  borderSide: BorderSide(
+                                      color: Colors.white, width: 0.3),
+                                ),
+                                focusedBorder: UnderlineInputBorder(
+                                  borderSide: BorderSide(
+                                      color: Color.fromARGB(255, 255, 118, 5)),
+                                ),
+                              )),
                         ),
                       ],
                     ),
@@ -171,6 +185,7 @@ class ContactMe extends StatelessWidget {
                     TextField(
                         maxLines: 10,
                         minLines: 5,
+                        style: TextStyle(color: Colors.white),
                         decoration: InputDecoration(
                           hintText: "Message",
                           hintStyle: TextStyle(color: Colors.grey.shade700),
@@ -179,11 +194,12 @@ class ContactMe extends StatelessWidget {
                                 BorderSide(color: Colors.white, width: 0.3),
                           ),
                           focusedBorder: UnderlineInputBorder(
-                            borderSide: BorderSide(color: Colors.cyan),
+                            borderSide: BorderSide(
+                                color: Color.fromARGB(255, 255, 118, 5)),
                           ),
                         )),
                     SizedBox(
-                      height: 16.0,
+                      height: 24,
                     ),
                     DecoratedBox(
                       decoration: BoxDecoration(
@@ -198,12 +214,13 @@ class ContactMe extends StatelessWidget {
                       child: ElevatedButton(
                         onPressed: () {},
                         style: ElevatedButton.styleFrom(
-                            padding: EdgeInsets.all(16.0),
+                            padding: EdgeInsets.symmetric(
+                                vertical: 24.0, horizontal: 16.0),
                             primary: Colors.transparent),
                         child: Text(
                           'Send message',
                           style: TextStyle(
-                              fontSize: 16, fontWeight: FontWeight.bold),
+                              fontSize: 16.0, fontWeight: FontWeight.bold),
                         ),
                       ),
                     )
